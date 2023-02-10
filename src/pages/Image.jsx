@@ -98,12 +98,14 @@ function Image() {
         if (response.status == 200) {
             setIsLoading(false);
             setResultFetched(true);
-            console.log(response);
             image_url = response.data.data[0].url;
             setImageUrl(image_url);
+            const ip = await getUserIp();
+            const { data, error } = await supabase
+                .from('Users')
+                .update({ queriesLeft: totalQueriesLeft - 1 })
+                .eq('ip', ip)
             setTotalQueriesLeft(totalQueriesLeft - 1);
-        } else {
-            console.log(response);
         }
     }
     return (

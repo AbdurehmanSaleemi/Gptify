@@ -111,13 +111,7 @@ function Text() {
             .from('Users')
             .update({ queriesLeft: totalQueriesLeft - 1 })
             .eq('ip', ip)
-        if (data) {
-            console.log(data);
-        } if (error) {
-            console.log(error);
-        }
         setTotalQueriesLeft(totalQueriesLeft - 1);
-        console.log(totalQueriesLeft);
     }
     return (
         <div className="App">
