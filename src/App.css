@@ -1,38 +1,216 @@
-.App {
-  text-align: center;
+.parent {
+  background: rgb(11, 1, 26);
+  background: linear-gradient(90deg, rgba(11, 1, 26, 1) 0%, rgba(45, 0, 113, 1) 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btnPrimary {
+  background: rgba(217, 217, 217, 0.2);
+  border: 1px solid #A3A3A3;
+  border-radius: 59px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.featureBox {
+  background: rgba(217, 217, 217, 0.07);
+  border: 1px solid #FFFFFF;
+  border-radius: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.searchBox {
+  background: rgba(60, 60, 60, 0.15);
+  border: 1px solid #959595;
+  backdrop-filter: blur(27px);
+  border-radius: 54px;
 }
 
-.App-link {
-  color: #61dafb;
+.generationBox {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 17px;
 }
 
-@keyframes App-logo-spin {
-  from {
+.gptBox {
+  background: rgba(252, 252, 252, 0.26);
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(35.5px);
+  border-radius: 69px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+}
+
+.double-bounce1,
+.double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+/*!
+ * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
+ * Copyright 2015 Daniel Cardoso <@DanielCardoso>
+ * Licensed under MIT
+ */
+.la-ball-clip-rotate,
+.la-ball-clip-rotate>div {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.la-ball-clip-rotate {
+  display: block;
+  font-size: 0;
+  color: #fff;
+}
+
+.la-ball-clip-rotate.la-dark {
+  color: #333;
+}
+
+.la-ball-clip-rotate>div {
+  display: inline-block;
+  float: none;
+  background-color: currentColor;
+  border: 0 solid currentColor;
+}
+
+.la-ball-clip-rotate {
+  width: 32px;
+  height: 32px;
+}
+
+.la-ball-clip-rotate>div {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border-width: 2px;
+  border-bottom-color: transparent;
+  border-radius: 100%;
+  -webkit-animation: ball-clip-rotate .75s linear infinite;
+  -moz-animation: ball-clip-rotate .75s linear infinite;
+  -o-animation: ball-clip-rotate .75s linear infinite;
+  animation: ball-clip-rotate .75s linear infinite;
+}
+
+.la-ball-clip-rotate.la-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.la-ball-clip-rotate.la-sm>div {
+  width: 16px;
+  height: 16px;
+  border-width: 1px;
+}
+
+.la-ball-clip-rotate.la-2x {
+  width: 64px;
+  height: 64px;
+}
+
+.la-ball-clip-rotate.la-2x>div {
+  width: 64px;
+  height: 64px;
+  border-width: 4px;
+}
+
+.la-ball-clip-rotate.la-3x {
+  width: 96px;
+  height: 96px;
+}
+
+.la-ball-clip-rotate.la-3x>div {
+  width: 96px;
+  height: 96px;
+  border-width: 6px;
+}
+
+/*
+  * Animation
+  */
+@-webkit-keyframes ball-clip-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-  to {
+
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes ball-clip-rotate {
+  0% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  50% {
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes ball-clip-rotate {
+  0% {
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  50% {
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ball-clip-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
