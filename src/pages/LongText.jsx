@@ -24,6 +24,7 @@ function LongText() {
     const [resultFetched, setResultFetched] = React.useState(false);
     const [totalQueriesLeft, setTotalQueriesLeft] = React.useState(0);
     const [isLoading, setIsLoading] = React.useState(false);
+    const [isLoadingUser, setIsLoadingUser] = React.useState(false);
 
     const onChange = (e) => {
         setInput(e.target.value);
@@ -62,6 +63,7 @@ function LongText() {
     }
 
     const initialCheck = async () => {
+        setIsLoadingUser(true);
         // get user IP Address
         const ip = await getUserIp();
         if (ip !== 'error') {
@@ -83,6 +85,7 @@ function LongText() {
                 setTotalQueriesLeft(10);
             }
         }
+        setIsLoadingUser(false);
     }
 
     useEffect(() => {
@@ -122,6 +125,7 @@ function LongText() {
                     {Menu()}
                 </div>
                 {TextGeneration(totalQueriesLeft, handleClick, onChange)}
+                {isLoadingUser ? Loading() : null}
                 {isLoading ? Loading() : resultFetched ? gptResponse(text) : null}
             </div>
         </div>

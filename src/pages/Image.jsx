@@ -22,6 +22,7 @@ function Image() {
     const [resultFetched, setResultFetched] = React.useState(false);
     const [totalQueriesLeft, setTotalQueriesLeft] = React.useState(0);
     const [isLoading, setIsLoading] = React.useState(false);
+    const [isLoadingUser, setIsLoadingUser] = React.useState(false);
     const [image_url, setImageUrl] = React.useState('');
 
     const onChange = (e) => {
@@ -59,6 +60,7 @@ function Image() {
     }
 
     const initialCheck = async () => {
+        setIsLoadingUser(true);
         // get user IP Address
         const ip = await getUserIp();
         if (ip !== 'error') {
@@ -80,6 +82,7 @@ function Image() {
                 setTotalQueriesLeft(10);
             }
         }
+        setIsLoadingUser(false);
     }
     useEffect(() => {
         initialCheck();
@@ -116,6 +119,7 @@ function Image() {
                     {Menu()}
                 </div>
                 {TextGeneration(totalQueriesLeft, onChange, handleClick)}
+                {isLoadingUser ? Loading() : null}
                 {isLoading ? Loading() : resultFetched ? gptResponse(image_url) : null}
             </div>
         </div>
