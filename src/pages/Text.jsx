@@ -11,7 +11,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-const supabaseUrl = 'https://ymifflojmeqlfytlxbhh.supabase.co'
+const supabaseUrl = 'https://bdnoqibfmwidzipxlilt.supabase.co'
 const supabaseKey = process.env.REACT_APP_SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
@@ -97,7 +97,7 @@ function Text() {
       model: "text-davinci-003",
       prompt: `${input}`,
       temperature: 0.5,
-      max_tokens: 700,
+      max_tokens: 100,
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
@@ -133,7 +133,7 @@ function gptResponse(text) {
   return <div className='flex flex-col w-full items-center justify-center mb-24'>
     <h1 className='relative inset-y-11 text-white gptBox px-3 py-2 rounded-full font-bold'>GPTIFY RESPONSE</h1>
     <div className='flex flex-col w-11/12 md:w-7/12 mt-6 md:px-12 py-8 generationBox p-5'>
-      <p className='font-display text-lg text-white/75 mt-3 text-center'>{text}</p>
+      <p className='font-display text-lg text-white/75 mt-3 text-left'>{text}</p>
     </div>
   </div>;
 }
@@ -150,10 +150,11 @@ function TextGeneration(totalQueriesLeft, handleClick, onChange) {
 }
 
 function Menu() {
-  return <div className='flex flex-row items-center space-x-10 mt-12 md:mt-0'>
-    <Link to={'/text'} className='text-white font-display text-lg cursor-pointer hover:text-white/80'>Text</Link>
-    <Link to={'/image'} className='text-white font-display text-lg cursor-pointer hover:text-white/80'>Image</Link>
-    <Link to={'/answer'} className='text-white font-display text-lg cursor-pointer hover:text-white/80'>Answer</Link>
+  return <div className='flex flex-row items-center space-x-7 mt-12 md:mt-0'>
+      <Link to={'/text'} className='text-white font-display text-lg cursor-pointer hover:text-white/80 border-b-2 border-white hover:border-white/80 pb-1'>Text</Link>
+      <Link to={'/longtext'} className='text-white font-display text-lg cursor-pointer hover:text-white/80 border-b-2 border-white hover:border-white/80 pb-1'>Long Text</Link>
+      <Link to={'/image'} className='text-white font-display text-lg cursor-pointer hover:text-white/80 border-b-2 border-white hover:border-white/80 pb-1'>Image</Link>
+      <Link to={'/answer'} className='text-white font-display text-lg cursor-pointer hover:text-white/80 border-b-2 border-white hover:border-white/80 pb-1'>Answer</Link>
   </div>;
 }
 

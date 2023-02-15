@@ -27,22 +27,22 @@ export default Landing;
 function features() {
     return <div className='flex flex-row w-full items-center justify-center mb-12 flex-wrap animate__animated animate__fadeInDown'>
         <div className='flex flex-row md:px-60 w-full py-12 md:w-10/12 justify-center md:justify-between items-center flex-wrap gap-y-5 gap-x-5'>
-            <div className={`featureBox w-60 h-auto px-5 py-12 cursor-pointer'} ${animationClass}`} data-micron="bounce">
+            <Link to={'/text'} className={`featureBox w-60 h-auto px-5 py-12 cursor-pointer'} ${animationClass}`} data-micron="bounce">
                 <h1 className='text-white/75 font-bold text-lg text-center uppercase'>Text <br /> Generation</h1>
                 <p className='text-white/70 text-center mt-4 font-display'>Generate text for your blog, social media, website, and more!</p>
-            </div>
-            <div className={`featureBox w-60 h-auto px-5 py-12 cursor-pointer'} ${animationClass}`} data-micron="bounce">
+            </Link>
+            <Link to={'/longtext'} className={`featureBox w-60 h-auto px-5 py-12 cursor-pointer'} ${animationClass}`} data-micron="bounce">
                 <h1 className='text-white/75 font-bold text-lg text-center uppercase'>Long Text <br /> Generation</h1>
                 <p className='text-white/70 text-center mt-4 font-display'>Our AI Tool efficiently generates the long text using modern GPT-3</p>
-            </div>
-            <div className={`featureBox w-60 h-auto px-5 py-12 cursor-pointer'} ${animationClass}`} data-micron="bounce">
+            </Link>
+            <Link to={'/image'} className={`featureBox w-60 h-auto px-5 py-12 cursor-pointer'} ${animationClass}`} data-micron="bounce">
                 <h1 className='text-white/75 font-bold text-lg text-center uppercase'>Image <br /> Generation</h1>
                 <p className='text-white/70 text-center mt-4 font-display'>Our AI Tool efficiently generates images using modern D.A.L.L.E</p>
-            </div>
-            <div className={`featureBox w-60 h-auto px-5 py-12 cursor-pointer'} ${animationClass}`} data-micron="bounce">
+            </Link>
+            <Link to={'/answer'} className={`featureBox w-60 h-auto px-5 py-12 cursor-pointer'} ${animationClass}`} data-micron="bounce">
                 <h1 className='text-white/75 font-bold text-lg text-center uppercase '>Answers the <br /> Question</h1>
                 <p className='text-white/70 text-center mt-4 font-display'>Our AI Tool efficiently answers the question just like ChatGPT</p>
-            </div>
+            </Link>
         </div>
     </div>;
 }
@@ -53,15 +53,16 @@ function landingContent() {
         <h1 className='text-white/70 text-center'>MEET GPTIFY 👋</h1>
         <h1 className='text-white text-2xl md:text-5xl font-bold text-center w-full'>Unleash Your <br /> Imagination with <br /> Automated Creativity</h1>
         <h1 className='text-white/70 text-center font-display md:w-3/4'>Artificial intelligence makes it fast & easy to create content for your blog, social media, website, and more! Rated 5/5 stars in 3,000+ reviews.</h1>
-        <button className={`inline-flex w-full md:w-1/2 items-center justify-center btnPrimary ${animationClass} py-6 gap-x-2 text-white/80 mb-12`}>Get Started <BsArrowRight /></button>
+        <Link to={'/text'} className={`inline-flex w-full md:w-1/2 items-center justify-center btnPrimary ${animationClass} py-6 gap-x-2 text-white/80 mb-12`}>Get Started <BsArrowRight /></Link>
     </div>;
 }
 
 function Menu() {
-    return <div className='flex flex-row items-center space-x-10 mt-12 md:mt-0'>
-        <Link to={'/text'} className='text-white font-display text-lg cursor-pointer hover:text-white/80'>Text</Link>
-        <Link to={'/image'} className='text-white font-display text-lg cursor-pointer hover:text-white/80'>Image</Link>
-        <Link to={'/answer'} className='text-white font-display text-lg cursor-pointer hover:text-white/80'>Answer</Link>
+    return <div className='flex flex-row items-center space-x-7 mt-12 md:mt-0'>
+        <Link to={'/text'} className='text-white font-display text-lg cursor-pointer hover:text-white/80 border-b-2 border-white hover:border-white/80 pb-1'>Text</Link>
+        <Link to={'/longtext'} className='text-white font-display text-lg cursor-pointer hover:text-white/80 border-b-2 border-white hover:border-white/80 pb-1'>Long Text</Link>
+        <Link to={'/image'} className='text-white font-display text-lg cursor-pointer hover:text-white/80 border-b-2 border-white hover:border-white/80 pb-1'>Image</Link>
+        <Link to={'/answer'} className='text-white font-display text-lg cursor-pointer hover:text-white/80 border-b-2 border-white hover:border-white/80 pb-1'>Answer</Link>
     </div>;
 }
 
